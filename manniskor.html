@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Människorna och organisationerna i Finlandssvensk AI:s nätverk.">
+    <meta name="theme-color" content="#f7f6f1">
+    <title>Människor och partner — Finlandssvensk AI</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #182a2a;
+        --muted: #536563;
+        --paper: #f7f6f1;
+        --white: #fff;
+        --green: #174e45;
+        --line: #dfe3da;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: 3px solid #9bb44e;
+        outline-offset: 4px;
+      }
+
+      .site-header,
+      main,
+      .site-footer {
+        width: min(1160px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 88px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .wordmark {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .wordmark img {
+        display: block;
+        width: 190px;
+        height: auto;
+        mix-blend-mode: multiply;
+      }
+
+      .site-nav {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .site-nav a {
+        text-decoration: none;
+      }
+
+      .site-nav a:hover,
+      .site-nav a[aria-current="page"] {
+        color: var(--green);
+      }
+
+      main {
+        padding-block: 80px 96px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 20px;
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 22px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1,
+      h2,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2 {
+        font-family: var(--serif);
+        font-weight: 400;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin-bottom: 20px;
+        font-size: clamp(48px, 7vw, 76px);
+        letter-spacing: -0.06em;
+        line-height: 1;
+      }
+
+      .intro {
+        max-width: 610px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .network-section {
+        margin-top: 72px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        font-size: clamp(32px, 4vw, 44px);
+        letter-spacing: -0.045em;
+      }
+
+      .section-note {
+        max-width: 360px;
+        margin-bottom: 3px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .partner-grid,
+      .people-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .partner-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .partner-card,
+      .person-card {
+        border: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .partner-card {
+        display: flex;
+        min-height: 112px;
+        align-items: center;
+        padding: 22px;
+        font-size: 16px;
+        font-weight: 650;
+        line-height: 1.45;
+      }
+
+      .people-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .person-card {
+        min-height: 95px;
+        padding: 23px 20px;
+        font-size: 15px;
+        font-weight: 650;
+        line-height: 1.5;
+      }
+
+      .site-footer {
+        display: flex;
+        min-height: 74px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .footer-name {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      @media (max-width: 760px) {
+        .site-header,
+        main,
+        .site-footer {
+          width: min(100% - 36px, 560px);
+        }
+
+        .site-header {
+          min-height: 72px;
+        }
+
+        .site-nav {
+          gap: 14px;
+          font-size: 12px;
+        }
+
+        main {
+          padding-block: 62px 72px;
+        }
+
+        .network-section {
+          margin-top: 58px;
+        }
+
+        .section-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .partner-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .people-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 520px) {
+        .site-header {
+          flex-wrap: wrap;
+          gap: 10px;
+          padding-block: 12px;
+        }
+
+        .wordmark img {
+          width: 160px;
+        }
+
+        .site-nav {
+          width: 100%;
+          justify-content: space-between;
+          gap: 8px;
+          font-size: 11px;
+        }
+
+        .partner-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .partner-card {
+          min-height: 82px;
+        }
+
+        .person-card {
+          min-height: 86px;
+          padding: 18px 15px;
+          font-size: 14px;
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          padding-block: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="Finlandssvensk AI, till startsidan">
+        <img src="https://github.com/user-attachments/assets/5a13cdbe-be0d-42e3-9951-586756ddde41" alt="FinSvAI — Finlandssvensk AI">
+      </a>
+      <nav class="site-nav" aria-label="Huvudnavigation">
+        <a href="index.html#om">Om oss</a>
+        <a href="index.html#projekt">Projekt</a>
+        <a href="manniskor.html" aria-current="page">Människor</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <section aria-labelledby="page-title">
+        <p class="eyebrow">Tillsammans i nätverket</p>
+        <h1 id="page-title">Människor och partner.</h1>
+        <p class="intro">
+          Finlandssvensk AI samlar människor och organisationer som tillsammans
+          stärker AI-kunskap och utveckling på svenska i Finland.
+        </p>
+      </section>
+
+      <section class="network-section" aria-labelledby="partners-title">
+        <div class="section-heading">
+          <h2 id="partners-title">Våra partner</h2>
+          <p class="section-note">
+            Organisationer i nätverket som bidrar med kunskap, perspektiv och samarbete.
+          </p>
+        </div>
+        <div class="partner-grid">
+          <div class="partner-card">Helsingfors universitet</div>
+          <div class="partner-card">Åbo Akademi</div>
+          <div class="partner-card">Yrkeshögskolan Arcada</div>
+          <div class="partner-card">Magma</div>
+          <div class="partner-card">Svenska litteratursällskapet i Finland (SLS)</div>
+          <div class="partner-card">Svenska kulturfonden</div>
+          <div class="partner-card">Svenska folkskolans vänner (SFV)</div>
+        </div>
+      </section>
+
+      <section class="network-section" aria-labelledby="people-title">
+        <div class="section-heading">
+          <h2 id="people-title">Människor i nätverket</h2>
+          <p class="section-note">
+            Personerna bakom det gemensamma arbetet för AI och svenskan i Finland.
+          </p>
+        </div>
+        <div class="people-grid">
+          <div class="person-card">Linda Mannila</div>
+          <div class="person-card">Jörg Tiedemann</div>
+          <div class="person-card">Mathias Creutz</div>
+          <div class="person-card">Krister Lindén</div>
+          <div class="person-card">Lieselott Nordman</div>
+          <div class="person-card">Yvonne Backholm-Nyberg</div>
+          <div class="person-card">Caj Södergård</div>
+          <div class="person-card">Dennis Biström</div>
+          <div class="person-card">Sebastian Köhler</div>
+          <div class="person-card">Kaj Arnö</div>
+          <div class="person-card">Patrik Floreen</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-name">Finlandssvensk AI</span>
+      <span>AI på svenska. I Finland. Tillsammans.</span>
+    </footer>
+  </body>
+</html>
