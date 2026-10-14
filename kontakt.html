@@ -65,24 +65,14 @@
       .wordmark {
         display: inline-flex;
         align-items: center;
-        gap: 11px;
-        font-size: 15px;
-        font-weight: 750;
-        letter-spacing: -0.035em;
         text-decoration: none;
       }
 
-      .mark {
-        display: grid;
-        width: 34px;
-        height: 34px;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--green);
-        color: var(--lime);
-        font-family: var(--serif);
-        font-size: 20px;
-        font-weight: 400;
+      .wordmark img {
+        display: block;
+        width: 190px;
+        height: auto;
+        mix-blend-mode: multiply;
       }
 
       .site-nav {
@@ -286,13 +276,11 @@
 
       @media (max-width: 420px) {
         .wordmark {
-          gap: 8px;
-          font-size: 13px;
+          flex: 0 0 auto;
         }
 
-        .mark {
-          width: 30px;
-          height: 30px;
+        .wordmark img {
+          width: 160px;
         }
 
         .site-header {
@@ -328,8 +316,7 @@
   <body>
     <header class="site-header">
       <a class="wordmark" href="index.html" aria-label="Finlandssvensk AI, till startsidan">
-        <span class="mark" aria-hidden="true">f</span>
-        <span>Finlandssvensk AI</span>
+        <img src="https://github.com/user-attachments/assets/5a13cdbe-be0d-42e3-9951-586756ddde41" alt="FinSvAI — Finlandssvensk AI">
       </a>
       <nav class="site-nav" aria-label="Huvudnavigation">
         <a href="index.html#om">Om oss</a>
