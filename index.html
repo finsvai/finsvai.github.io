@@ -355,6 +355,53 @@
         padding: 64px 0;
       }
 
+      .projects {
+        padding: 62px 0 66px;
+        border-top: 1px solid var(--line);
+      }
+
+      .projects h2 {
+        margin-bottom: 25px;
+        font-family: var(--serif);
+        font-size: clamp(38px, 5vw, 55px);
+        font-weight: 400;
+        letter-spacing: -0.05em;
+      }
+
+      .project-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 25px 28px;
+        border: 1px solid var(--line);
+        background: rgb(255 255 255 / 55%);
+      }
+
+      .project-card h3 {
+        margin-bottom: 7px;
+        font-family: var(--serif);
+        font-size: 27px;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+      }
+
+      .project-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .project-link {
+        flex: 0 0 auto;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
       .closing h2 {
         max-width: 570px;
         margin-bottom: 12px;
@@ -451,6 +498,17 @@
           gap: 23px;
           padding-block: 52px;
         }
+
+        .projects {
+          padding-block: 48px 54px;
+        }
+
+        .project-card {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 18px;
+          padding: 21px;
+        }
       }
 
       @media (max-width: 420px) {
@@ -499,6 +557,7 @@
       <nav class="site-nav" aria-label="Huvudnavigation">
         <a href="#om">Om oss</a>
         <a href="#fokus">Våra fokusområden</a>
+        <a href="#projekt">Projekt</a>
       </nav>
     </header>
 
@@ -582,6 +641,20 @@
             </p>
           </article>
         </div>
+      </section>
+
+      <section class="projects" id="projekt" aria-labelledby="projects-title">
+        <p class="eyebrow">Projekt i nätverket</p>
+        <h2 id="projects-title">Upptäck relaterade projekt.</h2>
+        <article class="project-card">
+          <div>
+            <h3>Fiskmö</h3>
+            <p>Läs mer om Fiskmö-projektet vid Helsingfors universitet.</p>
+          </div>
+          <a class="project-link" href="https://blogs.helsinki.fi/fiskmo-project/" target="_blank" rel="noopener noreferrer">
+            Besök Fiskmö-projektet <span aria-hidden="true">↗</span>
+          </a>
+        </article>
       </section>
 
       <section class="closing" aria-labelledby="closing-title">
